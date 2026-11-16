@@ -5,6 +5,7 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+analysis: an argument about basketball backed by specific, checkable evidence such as a stat, record, date, quote or described play
+hot_take: a confident opinion or prediction stated as settled fact, with no evidence or reasoning offered
+reaction: an emotional, in-the-moment response to a specific recent game, play, trade, injury or quote
+meme_joke: a joke, pun, sarcastic remark or meme whose main purpose is to be funny rather than literally true

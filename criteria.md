@@ -51,62 +51,67 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy
 
-<!-- Your criterion. It must name a number. -->
+Overall accuracy on the held-out test split is at least **0.60** on each of
+the three seeds.
 
-
-
-**Why this target:**
-
-
-
----
-
-## 2.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
+**Why this target:** With four labels a random guesser gets about 25%, so 0.60
+is more than double chance. It means 18 of the 30 test posts right. I didn't go
+higher because the `analysis` / `hot_take` boundary is subtle on r/nba (many
+takes include a stat), and 200 posts is a small training set.
 
 ---
 
-## 3.
+## 2. Per-label performance
 
-<!-- Your criterion. -->
+Every label has an F1 of at least **0.45** on each of the three seeds.
 
-
-
-**Why this target:**
-
-
-
----
-
-## 4.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
+**Why this target:** Each label has only about 7 or 8 posts in the test split,
+so a single miss can move its F1 by about 0.1. A floor of 0.45 still catches a
+label the model has basically failed to learn. I expect `analysis` to be
+closest to the floor, because it's the rarest kind of post on r/nba and it
+looks a lot like hot takes that quote a stat.
 
 ---
 
-## 5.
+## 3. Balance
 
-<!-- Your criterion. -->
+In my 200 labeled posts, every label has between **45 and 60** posts (22.5% to
+30%).
 
+**Why this target:** 45 posts puts about 7 in the test split, close to the
+README's warning line of about 8. Below that, a label's F1 is mostly noise. The
+ceiling of 60 is there because r/nba is flooded with hot takes and jokes, and
+without a cap those two would crowd out `analysis`, which I'll have to search
+for deliberately.
 
+---
 
-**Why this target:**
+## 4. Consistency
 
+At least a week after labeling, I relabel 20 randomly chosen posts from my 200
+without looking at my original labels, and at least **17 of 20 (85%)** match.
+
+**Why this target:** If I can't reproduce my own labels, the model is learning
+my mood on the day, not my rules. I allowed 3 mismatches because some r/nba
+posts sit on real boundaries (a take that quotes one stat, sarcasm that could
+be a sincere take), but more than 3 would mean my decision rules for
+`analysis` / `hot_take` and `hot_take` / `meme_joke` aren't specific enough.
+20 posts is 10% of my dataset, enough to catch a drifting rule without
+relabeling everything.
+
+---
+
+## 5. Confidence
+
+On each of the three seeds, accuracy on the model's most confident third of
+test posts is at least **0.20 higher** than on its least confident third.
+
+**Why this target:** Each third is 10 posts, so 0.20 means at least 2 more
+correct posts among the confident ones. If the gap is smaller, the model's
+confidence tells you nothing, and you couldn't use it to decide which r/nba
+posts to trust and which to check by hand.
 
 
 ---
