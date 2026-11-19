@@ -334,20 +334,46 @@ rows remain in the final `labels.csv`.
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
 
+Baseline: zero-shot `facebook/bart-large-mnli` with my four definitions from
+`label_definitions.txt`. Trained: my final model (`distilroberta-base`, 8
+epochs, seed 42). Both scored on the same 63 posts in `test_split.csv`.
+
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.238 | 0.635 | +0.397 |
+| Macro F1 | 0.096 | 0.629 | +0.533 |
+| F1 — `analysis` | 0.000 | 0.710 | +0.710 |
+| F1 — `hot_take` | 0.000 | 0.438 | +0.438 |
+| F1 — `reaction` | 0.000 | 0.778 | +0.778 |
+| F1 — `meme_joke` | 0.385 | 0.593 | +0.208 |
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
+[FILL IN honestly. I ran the baseline after I had already seen my trained
+model's numbers, so I can't claim a real prediction. If you wrote one down
+earlier, paste it here; if not, say that plainly.]
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
+
+The gap is large, but the baseline is weaker than its numbers suggest: it
+predicted `meme_joke` for **all 63 posts**. Its 0.238 accuracy is exactly the
+15 real jokes out of 63, which is what always guessing one label gets, and its
+only nonzero F1 comes from that. So the zero-shot model didn't sort posts
+badly; it didn't sort them at all. My guess is that it latched onto the
+`meme_joke` definition because it is the longest and broadest ("a joke, pun,
+sarcasm, absurd exaggeration, wordplay, a meme or a mock quote"), so it matches
+something in almost any comment.
+
+What fine-tuning bought is the ability to tell the four apart: the trained
+model gets 11 of 16 `analysis` and 14 of 17 `reaction` right. These labels
+depend on r/nba-specific signals (stat lines, injury-news grief, in-jokes)
+that a general model reading one-sentence definitions doesn't pick up. The
+honest caveat is that a fairer baseline, with shorter definitions of similar
+length, might do better than "always `meme_joke`", so +0.40 accuracy is an
+upper bound on what fine-tuning added.
 
 
 
