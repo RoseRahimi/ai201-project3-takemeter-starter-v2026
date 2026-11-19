@@ -3,9 +3,11 @@
 # Copy these from your README so the baseline is judged on exactly the
 # definitions you wrote. baseline.py reads this file.
 #
-# Delete the examples below and put yours in.
+# Precedence when a comment fits more than one label:
+# meme_joke, then reaction, then analysis, then hot_take.
+# Each definition below carries its own exclusion so the model sees the rule.
 
-analysis: an argument about basketball backed by specific, checkable evidence such as a stat, record, date, quote or described play
-hot_take: a confident opinion or prediction stated as settled fact, with no evidence or reasoning offered
-reaction: an emotional, in-the-moment response to a specific recent game, play, trade, injury or quote
-meme_joke: a joke, pun, sarcastic remark or meme whose main purpose is to be funny rather than literally true
+meme_joke: a comment whose main purpose is to be funny rather than literally true, such as a joke, pun, sarcasm, absurd exaggeration, wordplay, a meme or a mock quote; if a comment is sarcastic or joking it is meme_joke even when it contains a stat, a fact or an opinion
+reaction: a comment whose main point is the writer's own feeling (shock, sadness, sympathy, excitement, anger, nostalgia, or frustration with the thread or fans) rather than an argument, usually short exclamations, even if it mentions a stat or fact in passing; not used when the comment is joking
+analysis: a comment that backs a basketball claim with at least one concrete, checkable piece of evidence, such as a number or stat, a record, a date or season, a named game, series or trade, a direct quote, or a specific described play, or that states a checkable fact to correct or inform the discussion; not used when the stat is only the subject of a joke or an emotional outburst
+hot_take: any opinion, judgement, prediction or speculation about players, teams, owners or the league that offers no checkable evidence, whether stated confidently or hedged with words like "I think", "imo" or "probably"; this includes general reasoning, definitions of terms, and examples given only as player names with nothing checkable attached

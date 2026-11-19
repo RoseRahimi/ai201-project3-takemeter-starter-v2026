@@ -1,66 +1,66 @@
 {
   "seed": 42,
-  "n_test": 79,
-  "accuracy": 0.46835443037974683,
-  "f1_macro": 0.23495481127060075,
+  "n_test": 63,
+  "accuracy": 0.6349206349206349,
+  "f1_macro": 0.6293869474313023,
   "per_label": {
     "analysis": {
-      "precision": 0.5,
-      "recall": 0.0625,
-      "f1": 0.1111111111111111,
+      "precision": 0.7333333333333333,
+      "recall": 0.6875,
+      "f1": 0.7096774193548387,
       "support": 16
     },
     "hot_take": {
-      "precision": 0.4533333333333333,
-      "recall": 0.9714285714285714,
-      "f1": 0.6181818181818182,
-      "support": 35
+      "precision": 0.4117647058823529,
+      "recall": 0.4666666666666667,
+      "f1": 0.4375,
+      "support": 15
     },
     "reaction": {
-      "precision": 1.0,
-      "recall": 0.11764705882352941,
-      "f1": 0.21052631578947367,
+      "precision": 0.7368421052631579,
+      "recall": 0.8235294117647058,
+      "f1": 0.7777777777777778,
       "support": 17
     },
     "meme_joke": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "support": 11
+      "precision": 0.6666666666666666,
+      "recall": 0.5333333333333333,
+      "f1": 0.5925925925925926,
+      "support": 15
     }
   },
   "confusion": {
     "analysis": {
-      "analysis": 1,
-      "hot_take": 15,
+      "analysis": 11,
+      "hot_take": 5,
       "reaction": 0,
       "meme_joke": 0
     },
     "hot_take": {
-      "analysis": 1,
-      "hot_take": 34,
-      "reaction": 0,
-      "meme_joke": 0
+      "analysis": 3,
+      "hot_take": 7,
+      "reaction": 1,
+      "meme_joke": 4
     },
     "reaction": {
-      "analysis": 0,
-      "hot_take": 15,
-      "reaction": 2,
+      "analysis": 1,
+      "hot_take": 2,
+      "reaction": 14,
       "meme_joke": 0
     },
     "meme_joke": {
       "analysis": 0,
-      "hot_take": 11,
-      "reaction": 0,
-      "meme_joke": 0
+      "hot_take": 3,
+      "reaction": 4,
+      "meme_joke": 8
     }
   },
   "confidence": {
-    "mean_when_right": 0.5152897834777832,
-    "mean_when_wrong": 0.4421822726726532,
-    "accuracy_most_confident_third": 0.7692307692307693,
-    "accuracy_least_confident_third": 0.23076923076923078,
-    "n_per_third": 26
+    "mean_when_right": 0.7467482686042786,
+    "mean_when_wrong": 0.5877689123153687,
+    "accuracy_most_confident_third": 0.8571428571428571,
+    "accuracy_least_confident_third": 0.38095238095238093,
+    "n_per_third": 21
   },
   "device": "mps",
   "device_name": "Apple Silicon GPU (MPS)",
