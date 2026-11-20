@@ -334,18 +334,28 @@ rows remain in the final `labels.csv`.
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
 
-Baseline: zero-shot `facebook/bart-large-mnli` with my four definitions from
-`label_definitions.txt`. Trained: my final model (`distilroberta-base`, 8
-epochs, seed 42). Both scored on the same 63 posts in `test_split.csv`.
+Baseline: zero-shot `facebook/bart-large-mnli`, run twice on purpose: once
+with my four definitions from `label_definitions.txt`
+(`baseline_results.json`) and once with bare label names only
+(`baseline_results_bare_names.json`). Trained: my final model
+(`distilroberta-base`, 8 epochs, seed 42). All three scored on the same 63
+posts in `test_split.csv`.
 
-| Measure | Baseline | Trained | Difference |
-|---|---|---|---|
-| Overall accuracy | 0.238 | 0.635 | +0.397 |
-| Macro F1 | 0.096 | 0.629 | +0.533 |
-| F1 — `analysis` | 0.000 | 0.710 | +0.710 |
-| F1 — `hot_take` | 0.000 | 0.438 | +0.438 |
-| F1 — `reaction` | 0.000 | 0.778 | +0.778 |
-| F1 — `meme_joke` | 0.385 | 0.593 | +0.208 |
+**The baseline I compare against is the bare-names run**, because it scored
+higher, so it is the stronger and fairer opponent. The Difference column is
+trained minus bare names.
+
+| Measure | Baseline (definitions) | Baseline (bare names) | Trained | Difference |
+|---|---|---|---|---|
+| Overall accuracy | 0.238 | 0.349 | 0.635 | +0.286 |
+| Macro F1 | 0.096 | 0.257 | 0.629 | +0.372 |
+| F1 — `analysis` | 0.000 | 0.118 | 0.710 | +0.592 |
+| F1 — `hot_take` | 0.000 | 0.444 | 0.438 | -0.006 |
+| F1 — `reaction` | 0.000 | 0.467 | 0.778 | +0.311 |
+| F1 — `meme_joke` | 0.385 | 0.000 | 0.593 | +0.593 |
+
+**What my definitions were worth to the zero-shot model: -0.111 accuracy and
+-0.161 macro F1.** They made it worse.
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
@@ -358,22 +368,27 @@ earlier, paste it here; if not, say that plainly.]
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
 
-The gap is large, but the baseline is weaker than its numbers suggest: it
-predicted `meme_joke` for **all 63 posts**. Its 0.238 accuracy is exactly the
-15 real jokes out of 63, which is what always guessing one label gets, and its
-only nonzero F1 comes from that. So the zero-shot model didn't sort posts
-badly; it didn't sort them at all. My guess is that it latched onto the
-`meme_joke` definition because it is the longest and broadest ("a joke, pun,
-sarcasm, absurd exaggeration, wordplay, a meme or a mock quote"), so it matches
-something in almost any comment.
+**Why the definitions hurt.** With definitions, the zero-shot model predicted
+`meme_joke` for all 63 posts. Its 0.238 accuracy is exactly the 15 real jokes
+out of 63, which is what always guessing one label gets. My `meme_joke`
+definition is the longest and broadest ("a joke, pun, sarcasm, absurd
+exaggeration, wordplay, a meme or a mock quote... even when it contains a
+stat, a fact or an opinion"), so it matched something in almost every
+comment. My definitions were written to settle edge cases for a human
+labeller, with exclusions like "not used when...", and a zero-shot model
+reading them as one long hypothesis can't apply those exclusions. With bare
+names it at least spread its guesses (48 `hot_take`, 13 `reaction`, 1 each
+of the others).
 
-What fine-tuning bought is the ability to tell the four apart: the trained
-model gets 11 of 16 `analysis` and 14 of 17 `reaction` right. These labels
-depend on r/nba-specific signals (stat lines, injury-news grief, in-jokes)
-that a general model reading one-sentence definitions doesn't pick up. The
-honest caveat is that a fairer baseline, with shorter definitions of similar
-length, might do better than "always `meme_joke`", so +0.40 accuracy is an
-upper bound on what fine-tuning added.
+**What fine-tuning added.** Against the stronger bare-names baseline,
+fine-tuning added +0.29 accuracy and +0.37 macro F1. The gain is almost all
+in `analysis` (+0.59) and `meme_joke` (+0.59): those are the labels that
+depend on r/nba-specific signals (stat lines and in-jokes) that a general
+model can't infer from a name. On `hot_take`, fine-tuning added **nothing**
+(0.444 vs 0.438). The bare-names model got that F1 mostly by guessing
+`hot_take` 48 times, but the point stands: my trained model is no better than
+a zero-shot guesser on its weakest label, which matches criterion 2 missing
+on `hot_take`.
 
 
 
@@ -395,12 +410,19 @@ upper bound on what fine-tuning added.
 | 4. Self-relabel match | ≥ 17 of 20 | not measured | not measured | not measured | NOT MEASURED |
 | 5. Confidence gap (top third minus bottom third) | ≥ 0.20 | +0.54 | +0.27 | +0.31 | MET |
 
+**Spread across seeds:** accuracy 0.468 / 0.468 / 0.494 (2.5 points), macro
+F1 0.235 / 0.209 / 0.268 (5.9 points). Device: `mps` (Apple Silicon GPU),
+torch 2.15.0. The spread is well under ten points, so this result is
+stable, not a friendly draw. But it is stable because the model gives almost
+the same answer (`hot_take`) whichever posts land in the test split, so a low
+spread here says the model is consistently stuck, not consistently good.
+
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-Seed 42, before:
+Seed 42, before (from section 7):
 
 | true \ predicted | analysis | hot_take | reaction | meme_joke |
 |---|---|---|---|---|

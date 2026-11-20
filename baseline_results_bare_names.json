@@ -1,0 +1,355 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 63,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": false,
+  "scores": {
+    "n": 63,
+    "accuracy": 0.3492063492063492,
+    "f1_macro": 0.25718954248366016,
+    "per_label": {
+      "analysis": {
+        "precision": 1.0,
+        "recall": 0.0625,
+        "f1": 0.11764705882352941,
+        "support": 16
+      },
+      "hot_take": {
+        "precision": 0.2916666666666667,
+        "recall": 0.9333333333333333,
+        "f1": 0.4444444444444445,
+        "support": 15
+      },
+      "meme_joke": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 15
+      },
+      "reaction": {
+        "precision": 0.5384615384615384,
+        "recall": 0.4117647058823529,
+        "f1": 0.4666666666666667,
+        "support": 17
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "Players who are fully committed to every possession with full effort while having the composure to not negatively impact their team",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Yeah you dont need to watch to know cavs won the championship last year.",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Lmao second highest lineup 21 mins of total playing time. This may be the worst post of all time",
+      "gold": "reaction",
+      "predicted": "meme_joke"
+    },
+    {
+      "text": "Yep, that's it. Hukporti's was in the first 4 minutes of preseason. It's especially brutal seeing this happen to these guys who don't exactly have great footing in the league. Oweh's a second rounder, two-way guy trying to crack the rotation, hasn't even debuted yet. Simmons trying to make it back. Obviously anyone tearing an Achilles sucks, but the situations around them make these 3 so much worse.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "I'm sorry Kings fans.  And Ben.",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "Blame garland. If you guys didn\u2019t have him the pick would have been Acuff. They took Wagler for his fit next to garland. Also we like 10 games in. We won\u2019t know who\u2019s good or not for like 3/4 years.",
+      "gold": "analysis",
+      "predicted": "reaction"
+    },
+    {
+      "text": "I feel like the conversation around Mitch is going to be similar to last year's conversation around Thibs. \"He just delivered the team farther than they've gone in years, so getting rid of him would be crazy\". Except, going far doesn't mean that they're the right coach. And Mitch isn't even as good as Thibs was. If they've got flaws that you think are holding the team back then you can't be afraid to pull the trigger.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "It's easier to not make mistakes than to make miracles. I don't blame guys who put an insane pressure on themselves to be the best for having areas where they don't apply/release that pressure. Of course you want your guy to be like Michael Jordan... or do you ? He retired twice when he was still physically able to perform. You can take that from one player but you can't take it from two. (Harden single-handedly won 2 games for Philly against Boston in 2023. If Embiid does the same, they win the series. Sure, you'd like Harden to both carry the team for 2 games AND also be at least very good if not great or GOATed in the other games, but that's wishful thinking.) Other GOAT candidate won all of his titles within 3 years of changing teams at free agency. You see the problem ? No one in the history of this sport has had all the pressure and just consistently showed up, so why would you expect that of Harden ?",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Oh his name is James Harden?",
+      "gold": "meme_joke",
+      "predicted": "reaction"
+    },
+    {
+      "text": "120 vs 21 minutes like come on man. I bet if you looked at it before last night the starting five would have had a plus or neutral net rating",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "This is incredibly sad. I feel bad for him.",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "He's so good that he's going to win Rookie of the Year for the next three seasons.",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "They will make the league money with the sale price. $10m for an expansion team increases every team in the league value.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "It\u2019s because of gambling. Think of how many sports betting ads are tied to the NBA right now.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "That had less to do with Vegas and more to do with the A\u2019s ownership.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Agreed. He's a big a weak link when not healthy. And he didn't lookk great last night",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Yaxel saved my life",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Yes, leveraging skill sets to maximize shareholder value",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Gambling The league is all about it now. Blatantly supporting it in fact.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "This is a perfect take. I've been watching basketball for a long, long time, and I've come to know that players (and teams) have their ups and downs. The past 3 games for the Sixers have been rough, but if you look at the first 9 games they were playing great. This is a long season and they're still getting accustomed to playing together.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "I\u2019m not buying into that either man. He\u2019s older sure, but he also didn\u2019t have the prototypical playing pattern most guys getting into the league have. He doesn\u2019t have something like 10+ years of organized ball like some AAU guys, and it shows. He is still getting lost on defense, and he\u2019s absolutely made mistakes that you wouldn\u2019t expect from a normal 24 year old rook, but that\u2019s what makes me believe he can get a LOT better. Even if he doesn\u2019t become some all world talent, him just getting more game time and getting better defensively is a really achievable thing for him.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Yeah, you watch sports to see guys beat the odds and overcome adversity. It\u2019s why it\u2019s so satisfying to cheer for an underdog vs the dominant team. I didn\u2019t like Ben Simmons on the Sixers, I was hoping he\u2019d get it together, it would be a feel good story and then I could go back to hating. This? No sports fan wants to see this happen to a guy.",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "Vegas already has an arena for this that\u2019s barely a decade old, they don\u2019t need a new stadium right away",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "\"My name is James Harden\" James Harden",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Need the Sonics back. My team before we got the expansion Raps. Wish I could have experienced the Key Arena back then. I will come out for a game.",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Yea I can\u2019t see another team be willing to give him a shot after this. He will be over 30 coming off an Achilles and it will have been over a half decade since he has been a productive NBA player.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "I just saw a post by ESPN two hours ago detailing some interviews with the Kings GM and ESPN. Ben simmons literally said, he missed playing basketball, and he knows he was born to play the game. He's never felt this confident in his body in multiple years. This was posted like a. Hour or two before the injury...",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "They shouldn't have to draft him. Reparations",
+      "gold": "meme_joke",
+      "predicted": "reaction"
+    },
+    {
+      "text": "It was 99 gather steps.",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Think it\u2019s a guy who is willing to fill the role a team needs vs just doing the thing he is best at / will get him paid more",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "It's a guy that excels in their role. Whether that's scoring, defense, shooting, playmaking...; all or some of those. It can be a star, a good player, a role player; they can all be winning players.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "LaVine was never that guy\u2026.",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Cam thomas is going to be back in the league playing on a literal green light.",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Too small of a sample. If anything more concerned about LeBron. His three pointer is gone and guys were blowing by him all night last night. Still has good moments but..",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "This article was from 2019. \"What our orthopedics are telling us,\" Silver says, \"is they're seeing wear-and-tear issues in young players that they didn't used to see until players were much older.\" Players, they say, are physically broken down by the time they reach the NBA. Youth basketball is a disaster.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Jordan went to play baseball when his father died because it was his father's dream that he pursue baseball. I wouldn't call that quitting. Considering his experience with baseball and it being a skill sport, he was actually pretty good at it as well.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "The trade looks even worse when you add in the 2028 clippers pick that they might get (in a potentially loaded draft) Gansey came to Philly looking to make a splash and started off his tenure by doing some stupid shit",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Even worse that that: career average is 81%.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Being able to switch repeatedly and onto multiple positions, being able to double team and trap opposing scorers to blow up actions, being able to rotate and get a hand up Yeah guys like Hauser and Pritchard (not to mention Tatum) being better at this stuff than Brown are part of the reason for his on/off splits.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Just from a mental standpoint this has to be absolutely brutal. Takes some time to heal away from the game, comes back and same thing happens",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "No matter how you feel about the guy, sucks having a season injury after being so joyful going into this season",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "Nope dude hasn't been same after those Hamstring injuries. As someone who has gone through hammy injuries he didn't do himself any favors by playing through injuries or coming back too fast.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "If you can't handle my at my Tingus you don't deserve me at my Pingus",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Genuinely what on earth is going on though",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Wow this comment makes me feel very old, that series feels like it happened just a few years ago",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "Agreed. I personally think that Donovan and their coach feel pressured to let JH cook at times. Mentally, Donovan reminds me of Bron before his first. Championship.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Holy Dirk. I hadn't seen any media of him recently, so I was extremely shocked to see him barely being able to walk now. Guy legit looks like a 70 year old grandad walking around, a complete 180 of his playing days.",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "Dont even bother the \"intentionally got fat and hurt from it\" crowd is not a high iq group",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "I guess there\u2019s some legal things related to officially retiring",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Fuck. Dude looked like he was back and was balling out in preseason. I forgot how huge he actually is since he plays like a point forward but looked bigger than Sabonis out there.",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Devastating for Simmons. The Kings are truly cursed wtf",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "I feel for him; if he ever comes back to the league after this I will never make fun of him ever",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "harden with that heat team ? lmao them boys would be even worse",
+      "gold": "meme_joke",
+      "predicted": "reaction"
+    },
+    {
+      "text": "This is somehow both the most Ben Simmons and Sacramento Kings thing ever",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "lol would love a ref calling a travel only cause they weren\u2019t impressed",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "nah almost 20 years of watching okc and it\u2019s usually the best part of the day for me. used to think the old dudes in my childhood were too addicted to sports but i get it now",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Tim Duncan I mean, not that I don't agree, but this paints him as a perennial playoff loser. He only lost one series and that was in the finals. I know that it was kinda a choke job, but the roster is still young and nothing is guaranteed in the NBA. Absolutely no one should be expected to win a title",
+      "gold": "analysis",
+      "predicted": "reaction"
+    },
+    {
+      "text": "Three games ago, brown had the highest on/off on the team. A lot of this is small sample size theater, but I think the biggest thing is him being staggered with Embiid.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "2018 ya. 2018 and 2021 were the only real title teams he had and both got fucked by injuries Underrated is how bad the houston owner wanted to duck the tax every year and really avoid going all in.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Honestly he was a great pick up by the Sixers especially for what that roster needs. He spaces the floor, obviously doesn\u2019t need the ball in his hands, and plays solid defense. He was one of Philly\u2019s better players last night",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Zach Lavine is ready to put up 30 shots a game for his hometown team.",
+      "gold": "meme_joke",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "On the flip side the warriors organization wasn't able to prevent kuminga and wiseman from being pretty big busts despite having a good team, coach, and organization behind them. Yaxel deserves props for being a sponge and doing what is asked of each night (so far anyway).",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "If he can get his medicals figured out then he would at least try a comeback",
+      "gold": "hot_take",
+      "predicted": "reaction"
+    }
+  ]
+}
